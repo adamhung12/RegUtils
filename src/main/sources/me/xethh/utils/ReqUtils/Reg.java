@@ -1,8 +1,14 @@
 package me.xethh.utils.ReqUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Reg {
     private Pattern pattern;
@@ -35,6 +41,18 @@ public class Reg {
                 consumer.accept(matcher);
             }
             return this;
+        }
+        public Optional<String> ifMatchAndReturn(Function<Matcher, String> operation){
+            if(matcher.matches()){
+                return Optional.ofNullable(operation.apply(matcher));
+            }
+            return Optional.empty();
+        }
+        public List<Optional<String>> ifMatchAndReturns(Function<Matcher, String> ...operation){
+            if(matcher.matches()){
+                return Arrays.stream(operation).map(it->Optional.ofNullable(it.apply(matcher))).collect(Collectors.toList());
+            }
+            return new ArrayList<>();
         }
     }
 
