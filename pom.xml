@@ -61,6 +61,12 @@
       <version>1.0.0</version>
     </dependency>
   </dependencies>
+
+  <!--Add SCM and distribution managemetn start-->
+  <scm>
+    <url>scm:git:https://github.com/adamhung12/RegUtils.git</url>
+  </scm>
+
   <dependencyManagement>
 
   </dependencyManagement>
