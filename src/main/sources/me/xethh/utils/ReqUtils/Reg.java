@@ -37,8 +37,8 @@ public class Reg {
     }
 
     /**
-     * {@link Matching} object provide functionality to as match whole word ({@link #ifMatch(Consumer)}, {@link #ifMatchAndReturn(Function)}, {@link #ifMatchAndReturns(Function[])})
-     * or find matched segment ({@link #loopMatched()}, {@link #loopMatched(int)}, {@link #loopMatchedStream()}, {@link #loopMatchedStream(int), {@link #loopMatchedZippedStream()}})
+     * {@link Matching} object provide functionality to as match whole word {@literal (} {@link #ifMatch(Consumer)}, {@link #ifMatchAndReturn(Function)}, {@link #ifMatchAndReturns(Function[])} {@literal )}
+     * or find matched segment {@literal (} {@link #loopMatched()}, {@link #loopMatched(int)}, {@link #loopMatchedStream()}, {@link #loopMatchedStream(int)}, {@link #loopMatchedZippedStream()}} {@literal )}
      */
     public static class Matching{
         private final Matcher matcher;
