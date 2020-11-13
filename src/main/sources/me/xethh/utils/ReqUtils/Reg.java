@@ -17,7 +17,7 @@ import java.util.stream.StreamSupport;
  * {@link Reg} is targeted to reduce the redundant coding for using java.util.regex.*
  */
 public class Reg {
-    private final Pattern pattern;
+    public final Pattern pattern;
 
     /**
      * Constructor only accessible from static method {@link #of(String)}
@@ -78,7 +78,7 @@ public class Reg {
         }
 
         public Iterator<String> loopMatched(int index){
-            return new Iterator<>() {
+            return new Iterator<String>() {
                 final AtomicBoolean first = new AtomicBoolean(true);
                 @Override
                 public boolean hasNext() {
